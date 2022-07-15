@@ -1,0 +1,45 @@
+name: 1.2) Print Version: Extended
+
+on: [push]
+
+jobs:
+# Job 1 -------------------------------------------------------------
+  print-version-simple:
+
+    name: Print version (simple)
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Display Python version
+        run: python --version
+
+# Job 2 -------------------------------------------------------------
+  print-version-extended:
+
+    name: Print version (extended)
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['2.7', '3.7', '3.8', '3.9', '3.10', 'pypy2.7', 'pypy3.8']
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Display Python version (Python ${{ matrix.python-version }} on ${{ matrix.os }}
+        run: python --version
