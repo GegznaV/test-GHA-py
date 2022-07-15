@@ -27,9 +27,8 @@ Vilmantas Gėgžna
 
 
 <!-- Badges -->
-
-[build-image]: https://github.com/GegznaV/test-GHA-py/actions/workflows/check.yml/badge.svg
-[build-url]: https://github.com/GegznaV/test-GHA-py/actions/workflows/check.yml
+[build-image]:https://github.com/GegznaV/test-GHA-py/actions/workflows/2-5--lint-test-cov-5.yml/badge.svg
+[build-url]: https://github.com/GegznaV/test-GHA-py/actions/workflows/2-5--lint-test-cov-5.yml 
 
 [coverage-image]: https://codecov.io/gh/GegznaV/test-GHA-py/branch/main/graph/badge.svg
 [coverage-url]: https://codecov.io/gh/GegznaV/test-GHA-py
