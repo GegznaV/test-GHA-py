@@ -1,4 +1,4 @@
-name: 1.2) Print Version: Extended
+name: "1.2) Print Version: Extended"
 
 on: [push]
 
