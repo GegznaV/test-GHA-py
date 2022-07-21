@@ -1,4 +1,4 @@
-name: "1.3) Run .py File"
+name: "1.3) Run .py Scripts"
 
 on: [push]
 
@@ -14,11 +14,18 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: Display Python version
+      - name: Display Python version (script)
+        shell: python
+        run: |
+          import os
+          os.system('python --version')
+
+      - name: Display Python version (from file)
         run: python .github/print-tox-file.py 
+
+      - name: Display Contents of tox.ini file
+        shell: python
+        run: print(open('tox.ini', 'r').read())
 
       - name: Display Contents of Make file
         run: python .github/print-makefile.py 
-
-      - name: Display Contents of toc.ini file
-        run: python .github/print-tox-file.py 
