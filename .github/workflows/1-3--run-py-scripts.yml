@@ -14,18 +14,21 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: Display Python version (script)
+      - name: Display Python version (BASH script)
+        run: python --version
+
+      - name: Display Python version (Python script)
         shell: python
         run: |
           import os
           os.system('python --version')
 
-      - name: Display Python version (from file)
-        run: python .github/print-tox-file.py 
+      - name: Display Python version (script from file)
+        run: python .github/print-python-version.py 
 
-      - name: Display Contents of tox.ini file
+      - name: Display Contents of tox.ini file (Python script)
         shell: python
         run: print(open('tox.ini', 'r').read())
 
-      - name: Display Contents of Make file
+      - name: Display Contents of Make file (script from file)
         run: python .github/print-makefile.py 
