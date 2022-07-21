@@ -1,0 +1,24 @@
+name: "1.3) Run .py File"
+
+on: [push]
+
+jobs:
+  print-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Display Python version
+        run: python .github/print-tox-file.py 
+
+      - name: Display Contents of Make file
+        run: python .github/print-makefile.py 
+
+      - name: Display Contents of toc.ini file
+        run: python .github/print-tox-file.py 
